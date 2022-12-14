@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <title>Heritage_home</title>
+        <link rel="stylesheet" href="{% static 'home.css' %}"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?
+        family=poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+
+    </head>
+
+
+<body>
+    <section class="header">
+        <nav>
+            <div class="logo"><strong>HISTORY INSIGHTS</strong></div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">HOME</a></li>
+                    <li><a href="http://127.0.0.1:8000/heritage/">HERITAGE</a></li>
+                    <li><a href="http://127.0.0.1:8000/make_plan/">MAKE A PLAN</a></li>
+                    <li><a href="http://127.0.0.1:8000/about/">ABOUT US</a></li>
+                    <li><a href="http://127.0.0.1:8000/contact/">CONTACT US</a></li>
+                    <li><a href="http://127.0.0.1:8000/sign_up/">SIGN UP</a></li>
+                    <li><a href="http://127.0.0.1:8000/sign_in/">LOGIN</a></li>
+                    <li><a href="http://127.0.0.1:8000/profile_page/">PROFILE</a></li>
+                </ul>
+            </div>
+        </nav>
+<div class="text-box">
+    <h1>TIRED OF A BUSY LIFE????</h1>
+    <h3>TAKE A BREAK & RELAX A TOUR!!!!!</h3>
+
+    <a href="http://127.0.0.1:8000/heritage/" class="hero-btn">EXPLORE OUR HERITAGE</a>
+    <br>
+    <br>
+    <br>
+    {% for msg in messages %}
+        {{msg}}
+    {% endfor %}
+</div>
+
+    </section>
+</body>
+
+</html>
+
+
+

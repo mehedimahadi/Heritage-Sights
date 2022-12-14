@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Signup</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="{% static 'sign_up.css' %}"/>
+    </head>
+    <body>
+        <br>
+        <a href="http://127.0.0.1:8000/" class="back_btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <section class="container">
+        <form action='/signup' method='POST'>
+            <h1>SignUp</h1>
+            <input type="text" placeholder="Full Name" name="first_name" required>
+            <input type="text" placeholder="Username" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="password" placeholder="Confirm Password" name="confirmPassword" required>
+            {% csrf_token %}
+            <button type="submit">SignUp</button>
+
+        </form>
+        <br>
+        {% for msg in messages %}
+                {{msg}}
+            {% endfor %}
+    </section>
+    </body>
+</html>

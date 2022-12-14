@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'contact.css' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+  <body>
+    <br>
+        <a href="http://127.0.0.1:8000/" class="back_btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+    <section class="contact">
+        <div class="content">
+            <h1>Contact Us</h1><br>
+            <p>If you have any work from us or any types of quries related to
+                 our website,you can send us message from here.
+                 It's our pleasure to help you.</p><br>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Zakir Hossain Road<br>Block-E,Dhaka</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"> <i class="fas fa-phone-alt"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+8801701978920</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>tahsinraka710@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form action='/contact_us' method='POST'>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="fname" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="user_email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="textarea" name="user_message" required="required">
+                        <span>Type your Message</span>
+                    </div>
+                    <div class="inputBox">
+                        {% csrf_token %}
+                        <input type="submit" name="" value="Send Now">
+                    </div>
+                    {% for msg in messages %}
+                         {{msg}}
+                     {% endfor %}
+                </form>
+            </div>
+
+        </div>
+    </section>
+  </body>
+</html>

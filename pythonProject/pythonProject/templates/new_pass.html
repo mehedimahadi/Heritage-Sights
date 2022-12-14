@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>New Password</title>
+        <link rel="stylesheet" href="{% static 'new_pass.css' %}"/>
+    </head>
+    <body>
+        <div class="form-container">
+            {% block content%}
+            <form action="#" method="post" class="form-wrap">
+                {% csrf_token %}
+                <h2>Change Password</h2>
+                <div class="form-box">
+                    <h3>Current Password*</h3>
+<!--                    <input type="text" placeholder="Enter current password"/>-->
+                    {{form.old_password}}
+                    <h3><br>New Password*</h3>
+<!--                    <input type="text" placeholder="Enter new password"/>-->
+                     {{form.new_password1}}
+                    <li>Use Symbols, Numbers and Capital Letters <br>for creating a strong password.</li><br>
+                    <h3>New Password Confirmation*</h3>
+<!--                    <input type="text" placeholder="Repeat password"/>-->
+                    {{form.new_password1}}
+                </div>
+                <div class="form-submit">
+<!--                    {% csrf_token %}-->
+<!--                    {{form.as_p}}-->
+<!--                    <input type="submit" value="Update"/>-->
+                    <button type="submit" class="btn brn_lg btn-success mt-3">Change Password</button>
+                </div>
+            </form>
+            {% endblock content %}
+        </div>
+    </body>
+    </html>>

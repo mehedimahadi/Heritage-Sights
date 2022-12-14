@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Note plan</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'make_plan.css' %}"/>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+  <body>
+    <br>
+        <a href="http://127.0.0.1:8000/" class="back_btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+    <center><h1>Make A Plan For Your Journey!</h1></center><br>
+    <div id="app">
+        <textarea class="note">Some Sample text</textarea>
+        <textarea class="note">Some Sample text</textarea>
+        <textarea class="note">Some Sample text</textarea>
+        <textarea class="note">Some Sample text</textarea>
+        <textarea class="note">Some Sample text</textarea>
+        <button class="add-note" type="button">+ </button>
+    </div>
+  </body>
+</html>

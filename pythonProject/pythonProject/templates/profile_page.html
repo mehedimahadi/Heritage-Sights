@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Profile</title>
+        <link rel="stylesheet" href="{% static 'profile_page.css' %}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    </head>
+    <body>
+      <div class="container">
+        <div class="left-box">
+            <nav>
+                <div class="photo">
+                <img src="{% static 'profile_logo.png' %}"/>  </image>
+               <label for="file">Edit Picture</label>
+            </div><br><br><br>
+            <div class="box">
+                <div class="icon"><i class="fa fa-home" aria-hidden="true"></i>
+                </div>
+                <a href="http://127.0.0.1:8000/">Home</a>
+            </div>
+
+            <div class="box">
+                <div class="icon"><i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <a href="{% url 'password_change' %}">Change</a>
+                <a href="{% url 'password_change' %}">Password</a>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                </div>
+                <a href="http://127.0.0.1:8000/logout">Sign out</a>
+            </div>
+            </nav>
+        </div>
+        <div class="right-box">
+            <div class="profile-show">
+                <form action='/signup' method='POST'>
+                    <br>
+                    <h1>Personal Info</h1>
+                    <h2>Full Name</h2>
+                    <input type="text" class="input" name="full_name" value="Samira Islam">
+<!--                    <h2>Date of Birth</h2>-->
+<!--                    <input type="text" class="input" name="date_of_birth" value="October 11, 2001">-->
+<!--                    <h2>Gender</h2>-->
+<!--                    <input type="text" class="input" name="gender" value="{{user.Contact.Message}}">-->
+                    <h2>Email</h2>
+                    <input type="email" class="input" value="{{user.email}}">
+                    <h2>User Name</h2>
+                    {% csrf_token %}
+                    <input type="text" class="input" value="{{user.username}}">
+                    <button class="btn">Done</button>
+                </form>
+            </div>
+        </div>
+      </div>
+    </body>
+    </html>

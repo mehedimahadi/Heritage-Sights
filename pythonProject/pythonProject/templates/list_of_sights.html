@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>List of sights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'List_of_sights.css' %}"/>
+</head>
+<body>
+    <div class ="container">
+        <br>
+        <a href="http://127.0.0.1:8000/heritage/" class="back_btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <header class="content">
+            <h1>List of Old Dhaka Heritage Site</h1>
+        </header>
+                    <div class ="gallery">
+                        <a href="http://127.0.0.1:8000/ahsan_manjil/"><img src="{% static 'Ahsan_Manzil-Front_View (1).jpg' %}"/> </a>
+                        <div class = "desc">
+
+                                <a href="http://127.0.0.1:8000/ahsan_manjil/">Ahsan Manzil</a>
+
+                        </div>
+                    </div>
+                    <div class ="gallery">
+                        <a href="http://127.0.0.1:8000/lalbagh_fort/"><img src="{% static 'Dhaka_Lalbagh_Fort_5.jpg' %}"/> </a>
+                        <div class = "desc">
+
+                                <a href="http://127.0.0.1:8000/lalbagh_fort/">Lalbagh fort</a>
+
+                        </div>
+                    </div>
+
+                    <div class ="gallery">
+                        <a href="http://127.0.0.1:8000/star_mosque/"><img src="{% static 'Tara-masjid (1).jpg' %}"/> </a>
+                        <div class = "desc">
+
+                                <a href="http://127.0.0.1:8000/star_mosque/">Star mosque</a>
+
+                        </div>
+                    </div>
+
+                    <div class ="gallery">
+                        <a href="http://127.0.0.1:8000/ramakrishna_mission_temple/"><img src="{% static 'Ramakrishna_Mission_Temple,Dhaka (1).jpg' %}"/> </a>
+                        <div class = "desc">
+
+                                <a href="http://127.0.0.1:8000/ramakrishna_mission_temple/">Ramakrishna <br> Mission Temple</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+ </body>
+</html>

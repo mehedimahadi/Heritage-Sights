@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Reset password mail</title>
+        <link rel="stylesheet" href="{% static 'reset_with_mail.css' %}"/>
+    </head>
+    <body>
+        <div class="form-container">
+            <form action="http://127.0.0.1:8000/new_pass/" method="post" class="form-wrap">
+                <h2>Reset Password</h2>
+                <div class="form-box">
+                    <input type="text" placeholder="Enter Your Email"/>
+                </div>
+                <div class="form-submit" value="Send">
+                    {% csrf_token %}
+                </div>
+                {% for msg in messages %}
+                    {{msg}}
+                {% endfor %}
+            </form>
+        </div>
+    </body>
+    </html>

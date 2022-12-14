@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Sign In</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="{% static 'sign_in.css' %}"/>
+    </head>
+    <body>
+       <div class="back"> <br>
+        <a href="http://127.0.0.1:8000/" class="back_btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+    </div>
+        <form action='/signin' method='POST'>
+            <h1><b>Sign In</b></h1>
+            <div class="data">
+            <input type="text" placeholder="Username" name="userName" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <div class="pass">
+                    <a href="http://127.0.0.1:8000/reset_with_mail/">Forgot Password?</a>
+                </div>
+             {% csrf_token %}
+            <button type="submit">Login</button>
+            <div class="signup_link">
+                Not Registered yet?  <a href="http://127.0.0.1:8000/sign_up/">Signup</a>
+              </div>
+                {% for msg in messages %}
+                    {{msg}}
+                 {% endfor %}
+           </div>
+        </form>
+    </body>
+</html>
