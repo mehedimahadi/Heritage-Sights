@@ -20,6 +20,10 @@ from . import views
 from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
 from django.urls import path, reverse_lazy
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 from .views import password_change
 
 urlpatterns = [
@@ -48,4 +52,11 @@ urlpatterns = [
     # path('password_change_done', views.PasswordChangeDoneView.as_view(template_name="registration/password_change_done.html"), name='password_change_done'),
     path('password_change_done', PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'),
          name='password_change_done'),
+    path('searchbar/', views.searchbarr, name='searchbar'),
+    path('places/', views.places, name='places'),
+    path('information', views.handleInformation, name='handleInformation'),
+    path('heritageNew/', views.heritageNew, name='heritageNew'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

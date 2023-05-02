@@ -1,54 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
 body{
-    width: 100%;
+    background-image:url(sign_up.png);
     height: 100vh;
-    background-image: url(sign_up.jpg);
-    background-size: cover;
+    width: 100%;
     background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- }
- * {box-sizing: border-box}
- input[type=text], input[type=password] {
-    width: 30%;
-    font-size: 18px;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
+    background-size: cover;
+
+    
+}
+
+.back_btn{
+   font-size: xx-large;
+   color:rgb(255, 254, 254);
+   margin: 20px;
+
+}
+.back_btn:hover {
+   background: rgba(100, 100, 101, 0.948);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+}
+
+form{
+    margin-top: 50px;
+    text-align: center;
+    
+}
+input{
+    display: block;
+    width: 350px;
+    height: 40px;
+    margin: 20px;
     border: none;
-    background: #f1f1f1;
- }
- label{
-    font-size: 15px;
- }
- input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
     outline: none;
- }
- hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
- }
- button {
-    font-size: 18px;
-    font-weight: bold;
-    background-color: rgb(8, 120, 112);
-    color: white;
-    padding: 14px 20px;
-    margin: 16px 0;
+    font-size: 20px;
+    border-bottom:1px solid black;
+    background: transparent;
+    
+}
+button{
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    
     border: none;
+    background: #2691d9;
+margin-top: 30px;
+
+
+    
+   
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
     cursor: pointer;
-    width: 20%;
-    opacity: 0.9;
- }
- button:hover {
-    opacity:1;
- }
- .cancel {
-    padding: 14px 20px;
-    background-color: #6a0505dc;
- }
- .formContainer {
-    padding: 16px;
- }
- .formContainer p{
-    font-size: 15px;
- }
+    outline: none;
+
+}
+::placeholder{
+    color:white;
+}

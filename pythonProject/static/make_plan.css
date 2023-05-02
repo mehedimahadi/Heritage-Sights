@@ -5,6 +5,15 @@ body {
     background-size: cover;
     background-position: center;
   }
+.back_btn{
+   font-size: xx-large;
+   color:rgb(255, 253, 253);
+   margin: 20px;
+
+}
+.back_btn:hover {
+   background: rgba(100, 100, 101, 0.948);
+}
   
   #app {
     display: grid;

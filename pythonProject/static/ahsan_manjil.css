@@ -29,7 +29,7 @@ body{
 .wrapper .sidebar h2{
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
+  margin: left;
   margin-bottom: 30px;
 }
 

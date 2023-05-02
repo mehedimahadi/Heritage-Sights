@@ -11,6 +11,15 @@
     background-position: center;
     position: relative;
 }
+.back_btn{
+   font-size: xx-large;
+   color:rgb(255, 254, 254);
+   margin: 20px;
+
+}
+.back_btn:hover {
+   background: rgba(100, 100, 101, 0.948);
+}
 .content{
     width: 100%;
     position: absolute;
@@ -42,6 +51,22 @@ button{
     position: relative;
     overflow: hidden;
   
+    button-align: center;
+}
+submit{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #FF0000;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
     button-align: center;
 }
 span{

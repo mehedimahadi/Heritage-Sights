@@ -12,13 +12,18 @@
     background-position: center;
     position: relative;
 }
+
+.back_btn{
+   font-size: xx-large;
+   color:rgb(255, 254, 254);
+   margin: 20px;
+
+}
+.back_btn:hover {
+   background: rgba(100, 100, 101, 0.948);
+}
 .content{
-/*
-    width: 100%;
-    position: absolute;
-    top: 10%;
-    transform: translateY(-50%);
-*/
+
     text-align: center;
     color: #800000;
 }

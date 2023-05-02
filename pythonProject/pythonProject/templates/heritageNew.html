@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+
+
+{% load static %}
+<html lang="en">
+<!--{% block content %}-->
+<head>
+    <title>Heritage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'heritage.css' %}"/>
+</head>
+<body>
+    <div class="banner">
+        <br>
+        <a href="http://127.0.0.1:8000/" class="back_btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <div class="navbar">
+
+        </div>
+        <div class="content">
+            <h1>&nbsp SEARCH YOUR DESIRE<br>&nbsp DESTINATION</h1>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp The Historical Places of Bangladesh</p>
+            <div>
+                <button type="button"><span></span><li><a href="http://127.0.0.1:8000/list_of_sights/">Which Area?</a></li></button>
+            </div>
+            <div class="submit">
+
+                <form id="search-form" method="get" action="{% url 'places' %}">
+                    {% csrf_token %}
+                    {{i.SuggestedPlaceName1}}
+                    <button name="search" type="submit">Search</button>
+                </form>
+
+                <script>
+                $(function() {
+                    $('#search-form').on('submit', function() {
+                        $('#search').click();
+                        return false;
+                    });
+                });
+                </script>
+
+            </div>
+
+
+        </div>
+
+    </div>
+ </body>
+<!--{% endblock %}-->
+</html>
