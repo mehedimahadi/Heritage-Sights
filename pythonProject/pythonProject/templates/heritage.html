@@ -63,9 +63,9 @@
 
 
             <div class="box">
-                <h2>The Historical Places of Bangladesh</h2>
+                <h2 STYLE="margin:30px 20px 10px 35px"><a href="http://127.0.0.1:8000/list_of_sights/">The Historical Places of Bangladesh</a></h2>
                 <form  action="{% url 'places' %}" method="get">
-                    <input type="text" name="search" placeholder="type here....">
+                    <input type="text" id="search"  name="search"  placeholder="type here...." STYLE="margin:30px 20px 10px 35px">
                     {% csrf_token %}
                     <input type="submit" name="" value="Search">
 
