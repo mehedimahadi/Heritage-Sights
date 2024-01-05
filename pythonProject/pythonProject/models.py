@@ -61,3 +61,27 @@ class HeritageDetails(models.Model):
     SuggestedPhoto2 = models.ImageField(null=True, blank=True, upload_to="static")
 
 
+class Task(models.Model):
+    Task_id = models.AutoField
+    Title = models.CharField(max_length=200, null=True)
+    Complete = models.BooleanField(null=True, blank=True)
+    Created = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        order_with_respect_to = 'user'
+
+
+
+
+class Review(models.Model):
+    Task_id = models.AutoField
+    Rating = models.CharField(max_length=200)
+    Msg = models.CharField(max_length=200)
+    Created = models.DateTimeField(auto_now_add=True)
+    place = models.ForeignKey(
+        HeritageDetails, on_delete=models.CASCADE, null=True, blank=True)

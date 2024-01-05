@@ -1,25 +1,62 @@
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Note plan</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>Todo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="{% static 'make_plan.css' %}"/>
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-  <body>
-    <br>
+    <body>
         <a href="http://127.0.0.1:8000/" class="back_btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-    <center><h1>Make A Plan For Your Journey!</h1></center><br>
-    <div id="app">
-        <textarea class="note">Some Sample text</textarea>
-        <textarea class="note">Some Sample text</textarea>
-        <textarea class="note">Some Sample text</textarea>
-        <textarea class="note">Some Sample text</textarea>
-        <textarea class="note">Some Sample text</textarea>
-        <button class="add-note" type="button">+ </button>
-    </div>
-  </body>
+        <center><h2>Make A List For Your Journey!</h2></center>
+
+        <div class="center-column">
+            <form method="POST" action="/tasks/">
+                <div class="inputBox">
+                    {% if request.user.is_authenticated %}
+<!--                    <p>{{request.user}}</p>-->
+                    <a href="http://127.0.0.1:8000/logout">Logout</a>
+                    {% else %}
+                    <a href="http://127.0.0.1:8000/sign_in/">Login</a>
+                    {% endif %}
+                </div>
+                <div class="inputBox"><br><br>
+
+                             <input type="text" placeholder="Add new.." name="title"  required="required">
+
+
+
+                            {% csrf_token %}
+                            <input type="submit" name="" value="Create Now">
+
+<!--                            {% for msg in messages %}-->
+<!--                              {{msg}}-->
+<!--                            {% endfor %}-->
+
+                </div>
+
+            </form>
+
+            <div class="todo-list">
+                <h2 style="color:rgb(91, 55, 120);">Your List</h2>
+
+                <div class="item-row">
+
+                    <a class="btn btn-sm btn-updt" href="#"><i class="fa fa-circle" aria-hidden="true"></i></a>
+                    <span><b>Kasba Mosque</b></span>
+                    <a class="btn btn-sm btn-del" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                </div>
+                <div class="item-row">
+                    <a class="btn btn-sm btn-updt" href="#"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+                    <del><b>AHSAN MANZIL</b></del>
+                    <a class="btn btn-sm btn-del" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </body>
 </html>

@@ -56,6 +56,9 @@ urlpatterns = [
     path('places/', views.places, name='places'),
     path('information', views.handleInformation, name='handleInformation'),
     path('heritageNew/', views.heritageNew, name='heritageNew'),
+    path('tasks/', views.handleTasks, name='handleTasks'),
+    path('review/', views.review, name='review'),
+    path('review', views.handleReview, name='handleReview'),
 ]
 
 if settings.DEBUG:

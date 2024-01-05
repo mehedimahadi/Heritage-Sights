@@ -1,52 +1,111 @@
 body {
     width: 100%;
     height: 100vh;
-    background-image: url(Make_plan.jpg);
+    background-image: url(Make_plan2.jpg);
     background-size: cover;
     background-position: center;
   }
-.back_btn{
-   font-size: xx-large;
-   color:rgb(255, 253, 253);
-   margin: 20px;
+  .back_btn{
+	font-size: xx-large;
+	color:rgb(81, 81, 117);
+	margin: 100px;
+
+ }
+ .back_btn:hover {
+	color: rgba(136, 136, 139, 0.948);
+ }
+
+input{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border-color: #4d427e;
+	border-spacing: 30px;
+}
+
+input::placeholder {
+	color: #352d2b;
+}
+
+.btn-info{
+	width: 100px;
+	background: rgb(17, 97, 154);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+	transition: 0.1s;
+	border-radius: 3px;
+}
+
+.center-column{
+	width:700px;
+	height:400px;
+	margin: 50px auto;
+	padding:60px;
+	background-color: #d6e1f7;
+	border-radius: 3px;
+	box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+}
+
+.center-column .inputBox a{
+	padding-left: 600px;
+	color:#4d427e;
+	font-size: x-large;
+}
+.center-column .inputBox a:hover{
+	color: rgba(172, 40, 40, 0.948);
+}
+
+
+.center-column .inputBox input[type="submit"]{
+    width: 120px;
+    background: rgb(39, 79, 119);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+    transition: 0.1s;
+	border-radius: 3px;
+}
+.center-column .inputBox input[type="submit"]:hover {
+    background: rgba(76, 131, 176, 0.948);
+  }
+
+.item-row{
+	width: 100%;
+	background-color: #799ce0;
+	margin: 3px;
+	padding: 12px 20px;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 15px;
+	box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	box-sizing: border-box;
+}
+
+.item-row:hover{
+	background: rgba(112, 112, 138, 0.948);
+}
+.item-row span{
+	font-size: larger;
+}
+
+.item-row .btn-del{
+	color: #fff;
+	padding-left: 550px;
 
 }
-.back_btn:hover {
-   background: rgba(100, 100, 101, 0.948);
+
+.item-row .btn-del:hover{
+	color: rgba(189, 80, 80, 0.948);
 }
-  
-  #app {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    padding: 35px;
-    gap: 30px;
-  }
-  
-  .note {
-    height: 150px;
-    box-sizing: border-box;
-    padding: 16px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
-    resize: none;
-    font-family: sans-serif;
-    font-size: 16px;
-  }
-  
-  .add-note {
-    height: 150px;
-    border: none;
-    outline: none;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    font-size: 100px;
-    color: rgba(240, 218, 76, 0.936);
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  
-  .add-note:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
-  
+.btn-updt{
+	color: #fff;
+	width: 50px;
+	height: 50px;
+
+}

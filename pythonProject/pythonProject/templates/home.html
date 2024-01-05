@@ -26,8 +26,15 @@
                     <li><a href="http://127.0.0.1:8000/about/">ABOUT US</a></li>
                     <li><a href="http://127.0.0.1:8000/contact/">CONTACT US</a></li>
                     <li><a href="http://127.0.0.1:8000/sign_up/">SIGN UP</a></li>
+                    {% if request.user.is_authenticated %}
+<!--                    <p>{{request.user}}</p>-->
+                    <li><a href="http://127.0.0.1:8000/logout">LOGOUT</a></li>
+                    <li><a href="http://127.0.0.1:8000/profile_page/">{{request.user}}</a></li>
+                    {% else %}
                     <li><a href="http://127.0.0.1:8000/sign_in/">LOGIN</a></li>
                     <li><a href="http://127.0.0.1:8000/profile_page/">PROFILE</a></li>
+                    {% endif %}
+
                 </ul>
             </div>
         </nav>

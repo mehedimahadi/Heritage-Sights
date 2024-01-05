@@ -13,6 +13,7 @@ from django.urls import path, include, re_path
 from django.urls import re_path as sign_in
 # from django.contrib.auth import signin
 from django.contrib.auth.models import User
+from .models import Task, Review
 
 from .models import Contact, HeritageDetails
 
@@ -39,6 +40,9 @@ def contact(request):
 
 
 def make_plan(request):
+    # task = Task.objects.all()
+    # task = Task.objects.filter(user=request.user.id)
+    # print(task)
     return render(request, 'make_plan.html')
 
 
@@ -146,6 +150,49 @@ def handleContact_us(request):
     else:
         return HttpResponse('404 Not Found')
 
+
+
+
+
+def handleTasks(request):
+
+    if request.method == 'POST':
+        title = request.POST['title']
+        u = User.objects.filter(username=request.user)
+        # print(request.user)
+        myuser = models.Task(Title=title, user=u[0])
+        myuser.save()
+        return redirect('/')
+
+        # if myuser is not None:
+        #     messages.success(request, "Tasks successfully save.")
+        #     return redirect('/')
+        # else:
+        #     messages.error(request, "Something not matching.")
+        #     return redirect('/')
+
+
+
+
+def review(request):
+    # review = Review.objects.all()
+    # review = Review.objects.filter(user=request.review.id)
+    # print(request.Review.id)
+    return render(request, 'review.html')
+
+
+
+
+def handleReview(request):
+    if request.method == 'POST':
+        rating = request.POST['rating']
+        # p = HeritageDetails.objects.filter(PlaceName=request.)
+
+        # rating = request.GET.get('rating')
+        msg = request.POST['review']
+        myuser = models.Review(Rating=rating, Msg=msg)
+        myuser.save()
+        return redirect('/review/')
 
 # class PasswordChangeView(PasswordChangeView):
 #     form_class = 'new_pass.html'
